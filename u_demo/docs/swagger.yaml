@@ -1,0 +1,48 @@
+basePath: /api/v1
+definitions:
+  models.ParamLogin:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    required:
+    - password
+    - username
+    type: object
+host: 127.0.0.1:9099
+info:
+  contact:
+    email: 2033231795@qq.com
+    name: yang
+  description: 社区项目
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: u_demo项目接口文档
+  version: "1.0"
+paths:
+  /login:
+    get:
+      consumes:
+      - application/json
+      description: 用户通过用户名和密码进行登录，并返回 JWT 令牌
+      parameters:
+      - description: 登录参数
+        in: body
+        name: param
+        required: true
+        schema:
+          $ref: '#/definitions/models.ParamLogin'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 返回 JWT 令牌
+          schema:
+            type: string
+      summary: 升级版帖子列表接口
+      tags:
+      - auth
+swagger: "2.0"

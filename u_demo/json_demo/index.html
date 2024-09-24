@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json demo</title>
+</head>
+<body>
+    <h1>json demo</h1>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        axios.get('data')
+        .then((result) => {
+            // json 格式
+            console.log(result.data)
+        }).catch((err) => {
+            console.log(err)
+        });
+    </script>
+</body>
+</html>
